@@ -158,6 +158,44 @@ section .main-container{
     font-size: clamp(1rem, 1rem + 5vw, 2.5rem);
     font-weight: 600;
 }
+.content .typewriter-text:before{
+    content: "software developer";
+    color: #b74b4b;
+    animation: words 20s infinite;
+}
+.content .typewriter-text:after{
+    content: "";
+    background-color: black;
+    position: absolute;
+    width: calc(100%+8px);
+    height: 6%;
+    border-left: 3px solid black;
+    right: -8;
+    animation: cursor 0.6s infinite;
+}
+@keyframes cursor{
+    to{
+        border-left: 3px solid #b74b4b;
+    }
+}
+@keyframes words{
+    0%, 20%{
+        content: "Web Developer";
+    }
+    21%, 40%{
+        content: "Software Developer";
+    }
+    41%, 60%{
+        content: "Web Desiner";
+    }
+    61%, 80%{
+        content: "YouTuber";
+    }
+    81%, 100%{
+        content: "Script Writer";
+    }
+}
+@media
 .content .typewriter-text{
     color: #b74b4b;
     text-shadow: 0 0 10px #b74b4b;
@@ -422,4 +460,100 @@ footer .text span a:hover{
     border-radius: 6px;
     box-shadow: rgba(0,0,0,0.15);
     display: none;
+}
+@media (max-width: 1000px){
+    .about .about-details{
+        justify-content: center;
+        flex-direction: column;
+    }
+    .about .about-details .left{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    .about-details .right{
+        width: 90%;
+        margin: 40px 0;
+    }
+    .services .boxes .box{
+        margin: 20px 0;
+        width: calc(100%/2-20px);
+    }
+}
+@media (max-width:900px){
+    .about .left img{
+        height: 350px;
+        width: 350px;
+    }
+}
+@media (max-width:968px){
+    nav .logo{
+        position: absolute;
+        top: 16px;
+        left: 15px;
+        font-size: 1.5rem;
+    }
+    section .main-container{
+        padding-left: 0px;
+        display: flex;
+        flex-direction: column;
+    }
+    .nav-container .links{
+        display: none;
+    }
+    .hamburg,
+    .cancel{
+        opacity: 1;
+        pointer-events: visible;
+    }
+    .main-container .content{
+        margin-top: 20px;
+        width: 80%;
+    }
+    .social-links i{
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 1.5rem;
+    }
+    .main-container .image{
+        z-index: -1;
+        width: 50%;
+        height: 60%;
+    }
+    .skills .skills-details{
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .skills-details .text{
+        width: 100%;
+        margin-bottom: 50px;
+    }
+    .skills-details .boxes{
+        align-items: center;
+    }
+    .services .boxes{
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+    .contact .text{
+        width: 100%;
+    }
+}
+@media (max-width:500px){
+    .main-container .image{
+        width: 50%;
+        height: 60%;
+        margin-bottom: 0px;
+    }
+    .main-container .content{
+        width: 80%;
+    } 
+    .main-container button{
+        margin-top: 15px;
+    }
+    .skills-details .boxes .per{
+        font-size: 50px;
+        color: #b74b4b;
+    }
 }
